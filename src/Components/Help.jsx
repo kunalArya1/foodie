@@ -11,11 +11,7 @@ const Help = () => {
 
     // Handle the form submission logic, for example, send a request to a server.
 
-    // For demonstration purposes, we'll just log the entered data.
-    console.log("Name:", name);
-    console.log("Phone Number:", phoneNumber);
-    console.log("Order Number:", orderNumber);
-    console.log("Issue Description:", issueDescription);
+    
 
     // Reset the form fields
     setName("");
@@ -25,9 +21,11 @@ const Help = () => {
   };
 
   return (
-    <div className="bg-gray-100 h-full ">
-      <div className="container mx-auto p-4 bg-white rounded-md shadow-md">
-        <h1 className="text-3xl font-bold text-center my-10 mb-10">Help Center</h1>
+    <div>
+      <div className="mx-auto p-4">
+        <h1 className="text-3xl font-bold text-center my-10 mb-10">
+          Help Center
+        </h1>
 
         <form onSubmit={handleSubmit} className="max-w-md mx-auto">
           <div className="mb-6">
@@ -66,8 +64,7 @@ const Help = () => {
             <label
               htmlFor="orderNumber"
               className="block text-sm font-semibold text-gray-600"
-            >
-            </label>
+            ></label>
             <input
               type="text"
               id="orderNumber"
