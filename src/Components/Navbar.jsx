@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className=" font-semibold">
           <ul className="flex items-center justify-between gap-16 text-gray-600">
             <li>
-              <Link>
+              <Link to="/search">
                 <div className=" flex items-center gap-3">
                   <span className="_3yZyp">
                     <svg
