@@ -5,7 +5,7 @@ import Rescontainer from "./Rescontainer/Rescontainer.jsx";
 const Body = () => {
   return (
     <>
-      <div className="w-9/12 m-auto">
+      <div className="w-10/12 m-auto">
         <Heormind />
         <Herotopres />
         <Rescontainer/>
