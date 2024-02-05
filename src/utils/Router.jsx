@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Search from "../Components/Search.jsx";
+import Help from "../Components/Help.jsx";
 import Body from "../Components/Body.jsx";
 
 export const router = createBrowserRouter([
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
       {
         path: "/search",
         element: <Search />,
+      },
+      {
+        path: "/help",
+        element: <Help />,
       },
     ],
   },

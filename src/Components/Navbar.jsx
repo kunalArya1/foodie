@@ -69,7 +69,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to="/help">
                 <div className="flex gap-3 items-center">
                   <span className="_3yZyp">
                     <svg
