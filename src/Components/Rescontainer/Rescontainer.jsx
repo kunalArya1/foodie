@@ -1,8 +1,23 @@
 import { useEffect } from "react";
 import Rescard from "../Rescard/Rescard";
+import ResContext from "../../Context/ResContext";
+import { useState, useContext } from "react";
 
 const Rescontainer = () => {
- 
+  const [data, setdata] = useState([]);
+  // const { resData } = useContext(ResContext);
+  // console.log(resData);
+
+  const { resData } = useContext(ResContext);
+
+  useEffect(() => {
+    setdata(
+      resData?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+  }, [resData]);
+
+  // console.log(data);
 
   return (
     <>
@@ -37,15 +52,7 @@ const Rescontainer = () => {
 
         {/** ResContainer Card Details here */}
         <div className=" flex whitespace-nowrap  flex-wrap gap-5">
-          <Rescard  />
-          <Rescard />
-          <Rescard />
-          <Rescard />
-          <Rescard />
-          <Rescard />
-          <Rescard />
-          <Rescard />
-          <Rescard />
+          <Rescard {...data} />
         </div>
       </div>
     </>
