@@ -48,7 +48,7 @@ const Heormind = (props) => {
           {resMindData.map((res, index) => (
             <div
               key={index}
-              className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden "
+              className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden cursor-pointer "
             >
               <img
                 src={url + res.imageId}
