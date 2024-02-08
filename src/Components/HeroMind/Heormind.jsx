@@ -1,7 +1,26 @@
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { useContext, useEffect, useState } from "react";
+import axios from "axios";
+import ResContext from "../../Context/ResContext";
 
-const Heormind = () => {
+const Heormind = (props) => {
+  const [resMindData, setresMindData] = useState([]);
+  const { resData } = useContext(ResContext);
+
+  useEffect(() => {
+    // getData();
+    setresMindData(
+      resData?.data?.data?.cards[0]?.card?.card?.imageGridCards?.info
+    );
+  }, [resData]);
+
+  // if (!resMindData) return <h1>Loading...</h1>;
+
+  const url =
+    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
+
   const heading = "What's on your mind?";
+
   return (
     <>
       <div className=" h-full w-full mt-10 overflow-x-auto overflow-hidden whitespace-nowrap">
@@ -25,99 +44,19 @@ const Heormind = () => {
         </div>
 
         {/** Top restaurant chain in Bhopal Body */}
-
         <div className="h-[210px] my-4 w-full flex gap-1 mb-5 overflow-x-auto overflow-hidden whitespace-nowrap overflow-y-hidden ">
-          <div className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden ">
-            <img
-              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029857/PC_Creative%20refresh/3D_bau/banners_new/Poha.png"
-              alt=""
-              className="h-full w-full object-cover scale-[0.7] "
-            />
-          </div>
-          <div className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden ">
-            <img
-              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029857/PC_Creative%20refresh/3D_bau/banners_new/Poha.png"
-              alt=""
-              className="h-full w-full object-cover scale-[0.7] "
-            />
-          </div>
-          <div className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden ">
-            <img
-              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029857/PC_Creative%20refresh/3D_bau/banners_new/Poha.png"
-              alt=""
-              className="h-full w-full object-cover scale-[0.7] "
-            />
-          </div>
-          <div className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden ">
-            <img
-              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029857/PC_Creative%20refresh/3D_bau/banners_new/Poha.png"
-              alt=""
-              className="h-full w-full object-cover scale-[0.7] "
-            />
-          </div>
-          <div className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden ">
-            <img
-              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029857/PC_Creative%20refresh/3D_bau/banners_new/Poha.png"
-              alt=""
-              className="h-full w-full object-cover scale-[0.7] "
-            />
-          </div>
-          <div className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden ">
-            <img
-              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029857/PC_Creative%20refresh/3D_bau/banners_new/Poha.png"
-              alt=""
-              className="h-full w-full object-cover scale-[0.7] "
-            />
-          </div>{" "}
-          <div className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden ">
-            <img
-              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029857/PC_Creative%20refresh/3D_bau/banners_new/Poha.png"
-              alt=""
-              className="h-full w-full object-cover scale-[0.7] "
-            />
-          </div>{" "}
-          <div className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden ">
-            <img
-              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029857/PC_Creative%20refresh/3D_bau/banners_new/Poha.png"
-              alt=""
-              className="h-full w-full object-cover scale-[0.7] "
-            />
-          </div>{" "}
-          <div className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden ">
-            <img
-              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029857/PC_Creative%20refresh/3D_bau/banners_new/Poha.png"
-              alt=""
-              className="h-full w-full object-cover scale-[0.7] "
-            />
-          </div>{" "}
-          <div className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden ">
-            <img
-              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029857/PC_Creative%20refresh/3D_bau/banners_new/Poha.png"
-              alt=""
-              className="h-full w-full object-cover scale-[0.7] "
-            />
-          </div>{" "}
-          <div className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden ">
-            <img
-              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029857/PC_Creative%20refresh/3D_bau/banners_new/Poha.png"
-              alt=""
-              className="h-full w-full object-cover scale-[0.7] "
-            />
-          </div>{" "}
-          <div className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden ">
-            <img
-              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029857/PC_Creative%20refresh/3D_bau/banners_new/Poha.png"
-              alt=""
-              className="h-full w-full object-cover scale-[0.7] "
-            />
-          </div>{" "}
-          <div className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden ">
-            <img
-              src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029857/PC_Creative%20refresh/3D_bau/banners_new/Poha.png"
-              alt=""
-              className="h-full w-full object-cover scale-[0.7] "
-            />
-          </div>
+          {resMindData.map((res, index) => (
+            <div
+              key={index}
+              className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden "
+            >
+              <img
+                src={url + res.imageId}
+                alt=""
+                className="h-full w-full object-cover scale-[0.7] "
+              />
+            </div>
+          ))}
         </div>
       </div>
     </>

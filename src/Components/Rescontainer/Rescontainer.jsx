@@ -1,6 +1,9 @@
+import { useEffect } from "react";
 import Rescard from "../Rescard/Rescard";
 
 const Rescontainer = () => {
+ 
+
   return (
     <>
       <div>
@@ -34,7 +37,7 @@ const Rescontainer = () => {
 
         {/** ResContainer Card Details here */}
         <div className=" flex whitespace-nowrap  flex-wrap gap-5">
-          <Rescard />
+          <Rescard  />
           <Rescard />
           <Rescard />
           <Rescard />

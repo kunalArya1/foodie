@@ -2,7 +2,9 @@ import axios from "axios";
 import { useContext } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import resContext from "../../Context/ResContext";
+import ResContext from "../../Context/ResContext";
+
+
 
 const Rescard = () => {
   return (
