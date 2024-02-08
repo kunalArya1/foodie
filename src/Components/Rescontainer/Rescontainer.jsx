@@ -21,15 +21,15 @@ const Rescontainer = () => {
 
   return (
     <>
-      <div>
+      <div className=" mb-20">
         {/** ResContainer Heading  */}
         <div>
-          <h1 className=" font-bold text-2xl mt-4">
+          <h1 className=" font-bold text-2xl mt-4 mb-1">
             Restaureants with online food delivery in Bhopal
           </h1>
         </div>
         {/** ResContainer Filter Button  */}
-        <div className="flex gap-5">
+        <div className="flex gap-5 mb-3">
           <button className=" px-4 py-2  bg-gray-200 border-1 border-black mb-6 font-semibold mt-5  rounded-3xl">
             Fast Delivery
           </button>
@@ -52,7 +52,11 @@ const Rescontainer = () => {
 
         {/** ResContainer Card Details here */}
         <div className=" flex whitespace-nowrap  flex-wrap gap-5">
-          <Rescard {...data} />
+          {data.map((res) => (
+            <div key={res.info.id}>
+              <Rescard {...res.info} />
+            </div>
+          ))}
         </div>
       </div>
     </>

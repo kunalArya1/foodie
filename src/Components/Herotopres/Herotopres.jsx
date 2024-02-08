@@ -49,7 +49,7 @@ const Herotopres = () => {
           {data.map((res) => (
             <div
               key={res.info.id}
-              className=" h-[180px] w-[250px] text-start  rounded-lg"
+              className=" h-[150px] w-[250px] text-start  rounded-lg"
             >
               <div className="h-full w-full cursor-pointer ">
                 <img
