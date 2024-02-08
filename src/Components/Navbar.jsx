@@ -9,12 +9,12 @@ const Navbar = () => {
           <Link to={"/"}>
             <img
               className=" h-20 w-20"
-              src="https://i.pinimg.com/originals/6a/77/b0/6a77b011a5a3e594db052f9bbca6348d.jpg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYXVRqPu7R_onL_h6RxICSA8jSVfD0PWpGw&usqp=CAU"
               alt=""
             />
           </Link>
 
-          <span>
+          <span className=" cursor-pointer">
             <span className=" mr-4 font-bold underline underline-offset-2 text-gray-700">
               Indrapuri
             </span>
@@ -23,7 +23,7 @@ const Navbar = () => {
             </span>
           </span>
 
-          <span className=" text-orange-600 -mx-5 mt-[4px] ">
+          <span className=" text-orange-600 -mx-5 mt-[4px] cursor-pointer ">
             <AiOutlineDown />
           </span>
         </div>
