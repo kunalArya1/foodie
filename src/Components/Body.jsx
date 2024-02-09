@@ -14,6 +14,7 @@ const Body = () => {
     setdata(resData);
   }, [resData]);
 
+  // Zod
   if (data.length === 0) return <h1>Loading..</h1>;
   return (
     <>
