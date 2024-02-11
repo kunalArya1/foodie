@@ -13,7 +13,7 @@ const Rescard = (props) => {
     <>
       {/** ResCard Details */}
 
-      <div className=" h-[240px] w-[250px]  rounded-lg mb-7">
+      <div className=" h-[240px] w-[277px]  rounded-lg mb-7">
         <div className=" h-[170px] w-full ">
           <img
             className="h-full w-full object-cover rounded-3xl"
