@@ -1,6 +1,6 @@
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import "./herotopres.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import ResContext from "../../Context/ResContext";
 
 const Herotopres = () => {
@@ -19,6 +19,21 @@ const Herotopres = () => {
 
   const url =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+
+  const containerRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollLeft -= 310;
+    }
+  };
+
+  const scrollRight = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollLeft += 310;
+    }
+  };
+
   return (
     <>
       <div>
@@ -28,24 +43,32 @@ const Herotopres = () => {
             Top restaurant chains in Bhopal
           </h1>
           <div className="flex items-center gap-3">
-            <div
-              className=" h-[33px] w-[33px] cursor-pointer bg-gray-300 rounded-full overflow-hidden flex items-center justify-center
+            <button onClick={scrollLeft}>
+              <div
+                className=" h-[33px] w-[33px] cursor-pointer bg-gray-300 rounded-full overflow-hidden flex items-center justify-center
           "
-            >
-              <FaArrowLeft className=" text-gray-500 text-lg" />
-            </div>
-            <div
-              className=" h-[33px] w-[33px] cursor-pointer bg-gray-300 rounded-full overflow-hidden flex items-center justify-center
+              >
+                <FaArrowLeft className=" text-gray-500 text-lg" />
+              </div>
+            </button>
+
+            <button onClick={scrollRight}>
+              <div
+                className=" h-[33px] w-[33px] cursor-pointer bg-gray-300 rounded-full overflow-hidden flex items-center justify-center
           "
-            >
-              <FaArrowRight className=" text-gray-500 text-lg" />
-            </div>
+              >
+                <FaArrowRight className=" text-gray-500 text-lg" />
+              </div>
+            </button>
           </div>
         </div>
 
         {/** Top restaurant chain in Bhopal Body */}
 
-        <div className="h-[310px] my-4 w-full   flex gap-5 mb-9 overflow-x-auto overflow-hidden whitespace-nowrap border-b-2 ">
+        <div
+          ref={containerRef}
+          className="h-[310px] my-4 w-full   flex gap-5 mb-9 overflow-x-auto overflow-hidden whitespace-nowrap border-b-2 "
+        >
           {data.map((res) => (
             <div
               key={res.info.id}
