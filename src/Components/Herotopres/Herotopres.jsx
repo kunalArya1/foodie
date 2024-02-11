@@ -70,11 +70,12 @@ const Herotopres = () => {
           className="h-[310px] my-4 w-full   flex gap-5 mb-9 overflow-x-auto overflow-hidden whitespace-nowrap border-b-2 "
         >
           {data.map((res) => (
+
             <div
               key={res.info.id}
               className=" h-[180px] w-[270px] text-start  rounded-lg"
             >
-              <div className="h-full w-full cursor-pointer ">
+             <div className="h-full w-full cursor-pointer ">
                 <img
                   src={url + res.info.cloudinaryImageId}
                   alt=""

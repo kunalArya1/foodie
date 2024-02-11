@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import ResContext from "../../Context/ResContext";
 
 const Rescard = (props) => {
-  console.log(props);
 
   const url =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";

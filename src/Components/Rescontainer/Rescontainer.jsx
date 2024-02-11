@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Rescard from "../Rescard/Rescard";
 import ResContext from "../../Context/ResContext";
 import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 
 const Rescontainer = () => {
   const [data, setdata] = useState([]);
@@ -21,7 +22,7 @@ const Rescontainer = () => {
 
   return (
     <>
-      <div className=" mb-20">
+      <div className=" mb-20 w-full ">
         {/** ResContainer Heading  */}
         <div>
           <h1 className=" font-bold text-2xl mt-4 mb-1">
@@ -54,7 +55,9 @@ const Rescontainer = () => {
         <div className=" flex whitespace-nowrap  flex-wrap gap-5">
           {data.map((res) => (
             <div key={res.info.id}>
-              <Rescard {...res.info} />
+              <Link to={`/resturnat/${res.info.id}`}>
+                <Rescard {...res.info} />
+              </Link>
             </div>
           ))}
         </div>
