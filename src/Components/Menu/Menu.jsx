@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaQuran } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
+import Shimmer from "../Shimmer";
 
 const Menu = () => {
   const { id } = useParams();
@@ -27,7 +28,7 @@ const Menu = () => {
     getMenuData();
   }, []);
 
-  if (MenuData.length === 0) return <h1> Loading ...</h1>;
+  if (MenuData.length === 0) return <Shimmer />;
 
   return (
     <div className=" w-9/12 m-auto py-10 px-5">

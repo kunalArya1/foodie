@@ -7,6 +7,7 @@ import Shimmer from "../Components/Shimmer";
 export const ResContextProvider = ({ children }) => {
   const [resData, setresData] = useState([]);
   const [LocationModel, setLocationModel] = useState(false);
+  const [SignInModel, setSignInModel] = useState(false);
   const fetchData = async () => {
     const response = await axios.get(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.252509430416556&lng=77.45797589421272&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -22,7 +23,14 @@ export const ResContextProvider = ({ children }) => {
 
   return (
     <ResContext.Provider
-      value={{ resData, setresData, LocationModel, setLocationModel }}
+      value={{
+        resData,
+        setresData,
+        LocationModel,
+        setLocationModel,
+        SignInModel,
+        setSignInModel,
+      }}
     >
       {children}
     </ResContext.Provider>
