@@ -2,6 +2,7 @@ import axios from "axios";
 import ResContext from "./ResContext";
 import { useEffect } from "react";
 import { useState } from "react";
+import Shimmer from "../Components/Shimmer";
 
 export const ResContextProvider = ({ children }) => {
   const [resData, setresData] = useState([]);
@@ -15,6 +16,8 @@ export const ResContextProvider = ({ children }) => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  if (resData.length === 0) return <Shimmer />;
 
   return (
     <ResContext.Provider value={{ resData, setresData }}>

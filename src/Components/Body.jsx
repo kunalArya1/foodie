@@ -15,7 +15,6 @@ const Body = () => {
   }, [resData]);
 
   // Zod
-  if (data.length === 0) return <h1>Loading..</h1>;
   return (
     <>
       <div className="w-10/12 m-auto">
