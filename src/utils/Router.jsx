@@ -3,7 +3,7 @@ import App from "../App";
 import Search from "../Components/Search.jsx";
 import Help from "../Components/Help.jsx";
 import Body from "../Components/Body.jsx";
-import Menu from "../Components/Menu.jsx";
+import Menu from "../Components/Menu/Menu.jsx";
 
 export const router = createBrowserRouter([
   {

@@ -40,7 +40,7 @@ const Menu = () => {
         </Link>
       </p>
 
-      <div className=" w-full h-[13vh] mt-[7vh] flex justify-between items-center p-5 border-b-2 border-dotted border-zinc-300">
+      <div className=" w-full h-[20vh] mt-[7vh] flex justify-between items-center p-5 border-b-2 border-dotted border-zinc-300">
         <div className=" h-full w-6/12flex-col items-center  ">
           <p className=" font-bold text-[1.5rem] ">{MenuData?.[0]?.name}</p>
           <p className=" mt-2 text-zinc-400 font-semibold">
@@ -50,11 +50,11 @@ const Menu = () => {
             {MenuData?.[0]?.areaName} , {MenuData?.[0]?.sla.lastMileTravel} Km
           </p>
         </div>
-        <div className=" h-[8vh] w-[8vh] tracking-tighter bg-white shadow-md border border-zinc-200 rounded-md justify-center flex-col items-center p-2">
+        <div className=" h-[13vh] w-[14vh] tracking-tighter bg-white shadow-md border border-zinc-200 rounded-md justify-center flex-col items-center p-2">
           <p className=" text-green-600 pb-3 ml-2 font-bold  border-b-[1px] border-zinc-200">
             ⭐ {MenuData?.[0]?.avgRating}
           </p>
-          <p className=" text-[0.8rem] font-bold text-zinc-400 pt-3">
+          <p className=" text-[0.8rem] font-bold text-zinc-400 pt-3 ml-2">
             {MenuData?.[0]?.totalRatingsString}
           </p>
         </div>

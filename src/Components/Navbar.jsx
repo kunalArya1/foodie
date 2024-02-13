@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { AiOutlineDown } from "react-icons/ai";
+import { useContext } from "react";
+import ResContext from "../Context/ResContext";
 
 const Navbar = () => {
+  const { setLocationModel } = useContext(ResContext);
   return (
     <>
       <div className=" flex items-center justify-between h-20 w-full bg-white shadow-2xl px-9 ">
@@ -14,14 +17,16 @@ const Navbar = () => {
             />
           </Link>
 
-          <span className=" cursor-pointer">
-            <span className=" mr-4 font-bold underline underline-offset-2 text-gray-700">
-              Indrapuri
+          <button onClick={() => setLocationModel(true)}>
+            <span className=" cursor-pointer">
+              <span className=" mr-4 font-bold underline underline-offset-2 text-gray-700">
+                Indrapuri
+              </span>
+              <span className=" text-sm text-gray-500">
+                Chatrasal Nagar , IndraPuri , Bhopal
+              </span>
             </span>
-            <span className=" text-sm text-gray-500">
-              Chatrasal Nagar , IndraPuri , Bhopal
-            </span>
-          </span>
+          </button>
 
           <span className=" text-orange-600 -mx-5 mt-[4px] cursor-pointer ">
             <AiOutlineDown />

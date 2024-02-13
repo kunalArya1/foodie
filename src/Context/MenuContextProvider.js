@@ -1,15 +1,15 @@
 import axios from "axios";
-import ResContext from "./ResContext";
 import { useEffect } from "react";
+import MenuContext from "./MenuContext.jsx";
 import { useState } from "react";
 
 export const ResContextProvider = ({ children }) => {
-  const [resData, setresData] = useState([]);
+  const [MenuData, setMenuData] = useState([]);
   const fetchData = async () => {
     const response = await axios.get(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.252509430416556&lng=77.45797589421272&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
-    setresData(response);
+    setMenuData(response);
   };
 
   useEffect(() => {
@@ -17,8 +17,8 @@ export const ResContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <ResContext.Provider value={{ resData, setresData }}>
+    <MenuContext.Provider value={{ MenuData, setMenuData }}>
       {children}
-    </ResContext.Provider>
+    </MenuContext.Provider>
   );
 };
