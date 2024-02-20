@@ -41,7 +41,7 @@ const SignIn = () => {
           <button className=" p-4 bg-orange-500 w-[29vw] mt-4 shadow-md border border-zinc-300">
             LOGIN
           </button>
-          <p className=" text-start tracking-tight mt-2 ml-1 font-semibold text-zinc-500">
+          // <p className=" text-start tracking-tight mt-2 ml-1 font-semibold text-zinc-500">
             By clicking on Login, I accept the Terms & Conditions & Privacy
             Policy
           </p>
