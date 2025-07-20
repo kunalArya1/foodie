@@ -39,45 +39,39 @@ const Heormind = (props) => {
 
   return (
     <>
-      <div className=" h-full w-full mt-10 overflow-x-auto overflow-hidden whitespace-nowrap">
-        {/** Top restaurant in Bhopal Heading */}
-        <div className="flex items-center justify-between">
-          <h1 className="font-bold text-2xl">{heading}</h1>
-          <div className="flex items-center gap-3">
+      <div className="h-full w-full mt-6 sm:mt-10 overflow-hidden">
+        {/** What's on your mind Heading */}
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
+          <h1 className="font-bold text-xl sm:text-2xl">{heading}</h1>
+          <div className="flex items-center gap-2 sm:gap-3">
             <button onClick={scrollLeft}>
-              <div
-                className=" h-[33px] w-[33px] cursor-pointer bg-gray-300 rounded-full overflow-hidden flex items-center justify-center
-          "
-              >
-                <FaArrowLeft className=" text-gray-500 text-lg" />
+              <div className="h-[30px] w-[30px] sm:h-[33px] sm:w-[33px] cursor-pointer bg-gray-300 rounded-full overflow-hidden flex items-center justify-center">
+                <FaArrowLeft className="text-gray-500 text-sm sm:text-lg" />
               </div>
             </button>
 
             <button onClick={scrollRight}>
-              <div
-                className=" h-[33px] w-[33px] cursor-pointer bg-gray-300 rounded-full overflow-hidden flex items-center justify-center
-          "
-              >
-                <FaArrowRight className=" text-gray-500 text-lg" />
+              <div className="h-[30px] w-[30px] sm:h-[33px] sm:w-[33px] cursor-pointer bg-gray-300 rounded-full overflow-hidden flex items-center justify-center">
+                <FaArrowRight className="text-gray-500 text-sm sm:text-lg" />
               </div>
             </button>
           </div>
         </div>
 
-        {/** Top restaurant chain in Bhopal Body */}
+        {/** What's on your mind Body */}
         <div
           ref={containerRef}
-          className="h-[210px] my-4 w-full flex gap-1 mb-5 overflow-x-auto overflow-hidden whitespace-nowrap overflow-y-hidden "
+          className="h-[160px] sm:h-[180px] lg:h-[210px] my-4 w-full flex gap-1 mb-5 overflow-x-auto overflow-hidden whitespace-nowrap overflow-y-hidden scrollbar-hide"
         >
           {resMindData.map((res, index) => (
             <div
               key={index}
-              className=" flex-shrink-0 h-[200px] w-[200px] text-start  rounded-lg overflow-hidden cursor-pointer "
+              className="flex-shrink-0 h-[150px] w-[150px] sm:h-[170px] sm:w-[170px] lg:h-[200px] lg:w-[200px] text-start rounded-lg overflow-hidden cursor-pointer"
             >
               <img
                 src={url + res.imageId}
                 alt=""
-                className="h-full w-full object-cover scale-[0.7] "
+                className="h-full w-full object-cover scale-[0.7] hover:scale-[0.75] transition-transform duration-200"
               />
             </div>
           ))}

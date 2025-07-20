@@ -5,20 +5,20 @@ const Footer = () => {
   return (
     <>
       {/** Play Store and App Store Button */}
-      <div className=" h-[120px] w-full bg-gray-200 flex items-center justify-between px-[6.5rem]">
-        <div>
-          <h1 className=" font-bold text-3xl text-gray-600">
-            For better experience,download <br /> the foodie app now
+      <div className="h-[100px] sm:h-[120px] w-full bg-gray-200 flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 lg:px-[6.5rem] py-4 sm:py-0 gap-4 sm:gap-0">
+        <div className="text-center sm:text-left">
+          <h1 className="font-bold text-lg sm:text-2xl lg:text-3xl text-gray-600">
+            For better experience, download <br className="hidden sm:block" /> the foodie app now
           </h1>
         </div>
-        <div className=" flex items-center gap-6">
+        <div className="flex items-center gap-3 sm:gap-6">
           <img
-            className=" h-[70px]"
+            className="h-[50px] sm:h-[60px] lg:h-[70px]"
             src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/play_store.png"
             alt=""
           />
           <img
-            className=" h-[70px]"
+            className="h-[50px] sm:h-[60px] lg:h-[70px]"
             src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/app_store.png"
             alt=""
           />
@@ -26,7 +26,7 @@ const Footer = () => {
       </div>
 
       {/** Footer all the details */}
-      <div className="h-[400px] w-full bg-black text-white flex  justify-between px-[13rem] py-[3rem]">
+      <div className="min-h-[300px] sm:h-[400px] w-full bg-black text-white flex flex-col sm:flex-row justify-between px-4 sm:px-8 lg:px-[13rem] py-6 sm:py-[3rem] gap-6 sm:gap-0">
         <div>
           <h2 className=" font-bold text-4xl mb-2">Foodie</h2>
           <p className=" text-gray-400 text-[1.1rem]">

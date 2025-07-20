@@ -7,36 +7,36 @@ const Navbar = () => {
   const { setLocationModel, setSignInModel } = useContext(ResContext);
   return (
     <>
-      <div className=" flex items-center justify-between h-20 w-full bg-white shadow-2xl px-9 ">
-        <div className="left flex items-center justify-between gap-12 ">
+      <div className="flex items-center justify-between h-16 sm:h-20 w-full bg-white shadow-2xl px-3 sm:px-6 lg:px-9">
+        <div className="left flex items-center justify-between gap-3 sm:gap-6 lg:gap-12">
           <Link to={"/"}>
             <img
-              className=" h-20 w-20"
+              className="h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYXVRqPu7R_onL_h6RxICSA8jSVfD0PWpGw&usqp=CAU"
               alt=""
             />
           </Link>
 
-          <button onClick={() => setLocationModel(true)}>
-            <span className=" cursor-pointer">
-              <span className=" mr-4 font-bold underline underline-offset-2 text-gray-700">
+          <button onClick={() => setLocationModel(true)} className="hidden sm:block">
+            <span className="cursor-pointer">
+              <span className="mr-2 sm:mr-4 font-bold underline underline-offset-2 text-gray-700 text-sm sm:text-base">
                 Indrapuri
               </span>
-              <span className=" text-sm text-gray-500">
+              <span className="text-xs sm:text-sm text-gray-500">
                 Chatrasal Nagar , IndraPuri , Bhopal
               </span>
             </span>
           </button>
 
-          <span className=" text-orange-600 -mx-5 mt-[4px] cursor-pointer ">
+          <span className="text-orange-600 -mx-5 mt-[4px] cursor-pointer hidden sm:block">
             <AiOutlineDown />
           </span>
         </div>
-        <div className=" font-semibold">
-          <ul className="flex items-center justify-between gap-16 text-gray-600">
-            <li>
+        <div className="font-semibold">
+          <ul className="flex items-center justify-between gap-3 sm:gap-8 lg:gap-16 text-gray-600 text-sm sm:text-base">
+            <li className="hidden md:block">
               <Link to="/search">
-                <div className=" flex items-center gap-3">
+                <div className="flex items-center gap-1 sm:gap-3">
                   <span className="_3yZyp">
                     <svg
                       className="_1GTCc"
@@ -48,13 +48,13 @@ const Navbar = () => {
                       <path d="M17.6671481,17.1391632 L22.7253317,22.1973467 L20.9226784,24 L15.7041226,18.7814442 C14.1158488,19.8024478 12.225761,20.3946935 10.1973467,20.3946935 C4.56550765,20.3946935 0,15.8291858 0,10.1973467 C0,4.56550765 4.56550765,0 10.1973467,0 C15.8291858,0 20.3946935,4.56550765 20.3946935,10.1973467 C20.3946935,12.8789625 19.3595949,15.3188181 17.6671481,17.1391632 Z M10.1973467,17.8453568 C14.4212261,17.8453568 17.8453568,14.4212261 17.8453568,10.1973467 C17.8453568,5.97346742 14.4212261,2.54933669 10.1973467,2.54933669 C5.97346742,2.54933669 2.54933669,5.97346742 2.54933669,10.1973467 C2.54933669,14.4212261 5.97346742,17.8453568 10.1973467,17.8453568 Z"></path>
                     </svg>
                   </span>
-                  <span>Search</span>
+                  <span className="hidden lg:inline">Search</span>
                 </div>
               </Link>
             </li>
-            <li>
+            <li className="hidden lg:block">
               <Link>
-                <div className="flex items-center gap-3 relative">
+                <div className="flex items-center gap-1 sm:gap-3 relative">
                   <span className="_3yZyp">
                     <svg
                       className="_1GTCc"
