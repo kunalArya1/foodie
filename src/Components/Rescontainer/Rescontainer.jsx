@@ -7,19 +7,19 @@ import { Link } from "react-router-dom";
 const Rescontainer = () => {
   const [data, setdata] = useState([]);
   // const { resData } = useContext(ResContext);
-  // console.log(resData);
 
   const { resData } = useContext(ResContext);
+  console.log(resData);
 
   useEffect(() => {
     setdata(
-      resData?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   }, [resData]);
 
   // console.log(data);
-
+  // if (!data) return;
   return (
     <>
       <div className=" mb-20 w-full ">
@@ -53,6 +53,7 @@ const Rescontainer = () => {
 
         {/** ResContainer Card Details here */}
         <div className=" flex whitespace-nowrap  flex-wrap gap-5">
+          {console.log(data)}
           {data.map((res) => (
             <div key={res.info.id}>
               <Link to={`/resturnat/${res.info.id}`}>

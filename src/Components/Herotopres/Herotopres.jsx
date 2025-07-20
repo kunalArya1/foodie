@@ -13,7 +13,7 @@ const Herotopres = () => {
 
   useEffect(() => {
     setdata(
-      resData?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   }, [resData]);
