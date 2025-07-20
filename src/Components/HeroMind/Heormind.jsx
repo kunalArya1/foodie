@@ -14,8 +14,6 @@ const Heormind = (props) => {
     );
   }, [resData]);
 
-  if (!resMindData) return <h1>Loading...</h1>;
-
   const url =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
 
@@ -33,6 +31,11 @@ const Heormind = (props) => {
       containerRef.current.scrollLeft += 210;
     }
   };
+
+  // Show loading state without early return
+  if (!resMindData || resMindData.length === 0) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <>

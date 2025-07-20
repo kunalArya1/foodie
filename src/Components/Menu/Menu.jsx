@@ -8,27 +8,37 @@ const Menu = () => {
   const { id } = useParams();
   //   console.log(id);
   const [MenuData, setMenuData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getMenuData = async () => {
-    const response = await axios.get(
-      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.252509430416556&lng=77.45797589421272&restaurantId=${id}`
-    );
+    try {
+      const response = await axios.get(
+        `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.252509430416556&lng=77.45797589421272&restaurantId=${id}`
+      );
 
-    console.log(response);
-    const ArrayVlaue = [];
+      console.log(response);
+      const ArrayVlaue = [];
 
-    ArrayVlaue.push(response?.data?.data?.cards[0]?.card?.card?.info);
+      ArrayVlaue.push(response?.data?.data?.cards[0]?.card?.card?.info);
 
-    console.log(ArrayVlaue);
+      console.log(ArrayVlaue);
 
-    setMenuData(ArrayVlaue);
+      setMenuData(ArrayVlaue);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching menu data:", error);
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     getMenuData();
   }, []);
 
-  if (MenuData.length === 0) return <Shimmer />;
+  // Show loading without early return
+  if (loading || MenuData.length === 0) {
+    return <Shimmer />;
+  }
 
   return (
     <div className=" w-9/12 m-auto py-10 px-5">

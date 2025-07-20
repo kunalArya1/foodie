@@ -5,21 +5,25 @@ import { useState } from "react";
 import Shimmer from "../Components/Shimmer";
 import { data } from "./data.js";
 export const ResContextProvider = ({ children }) => {
-  const [resData, setresData] = useState([]);
+  const [resData, setresData] = useState(null);
   const [LocationModel, setLocationModel] = useState(false);
   const [SignInModel, setSignInModel] = useState(false);
+  const [loading, setLoading] = useState(true);
+
   const fetchData = async () => {
-    const response = await axios.get(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.252509430416556&lng=77.45797589421272&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    setresData(data);
+    try {
+      // Using static data since API has CORS issues
+      setresData(data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error loading data:", error);
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     fetchData();
   }, []);
-
-  if (resData.length === 0) return <Shimmer />;
 
   return (
     <ResContext.Provider
@@ -30,9 +34,10 @@ export const ResContextProvider = ({ children }) => {
         setLocationModel,
         SignInModel,
         setSignInModel,
+        loading,
       }}
     >
-      {children}
+      {loading ? <Shimmer /> : children}
     </ResContext.Provider>
   );
 };
