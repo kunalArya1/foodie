@@ -9,6 +9,10 @@ export const ResContextProvider = ({ children }) => {
   const [LocationModel, setLocationModel] = useState(false);
   const [SignInModel, setSignInModel] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [selectedLocation, setSelectedLocation] = useState({
+    name: "Indrapuri",
+    area: "Chatrasal Nagar, IndraPuri, Bhopal"
+  });
 
   const fetchData = async () => {
     try {
@@ -35,6 +39,8 @@ export const ResContextProvider = ({ children }) => {
         SignInModel,
         setSignInModel,
         loading,
+        selectedLocation,
+        setSelectedLocation,
       }}
     >
       {loading ? <Shimmer /> : children}
